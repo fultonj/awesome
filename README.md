@@ -1,25 +1,26 @@
 # How I run AwesomeWM on Fedora 29
 
-This is really for my own notes and backup.
+How I configure [awesome window manager](https://awesomewm.org).
+This is really for my own notes and backup. 
 
-1. installation
+## installation
 
 `dnf install awesome`
 
 (select awesome during gdm login)
 
-2. keyboard
+## keyboard
 
 `/usr/bin/setxkbmap -option "ctrl:nocaps"`
 
-3. networking
+## networking
 
 ```
 sudo dnf install NetworkManager-tui
 sudo nmtui
 ```
 
-3. navigation
+## navigation
 
 - mod4 ("super" aka "windows key")
 - mod4 [1-9] "go to workspace/tag #"
@@ -27,13 +28,13 @@ sudo nmtui
 - mod4 <enter> starts xterm
 - mod4 <space> cycles through tile options relative to open windows 
 
-4. terminal colors
+## terminal colors
 
 Updated and merged in my [.xinitrc](xinitrc)
 
 `xrdb -merge .xinitrc`
 
-5. Themes
+## Themes
 
 - set a theme by updating my [rc.lua](rc.lua)
 - restart awesome (Mod4+Ctrl+r) to try the new theme
@@ -49,7 +50,7 @@ Decided on:
  beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 ```
 
-6. Battery Widget
+## Battery Widget
 
 Installed Arc icons into /usr/share/icons/Arc as per:
 
@@ -77,7 +78,7 @@ Added the following to the top of my rc.lua:
         },
 ```
 
-7. Adjust screen brightness
+## Adjust screen brightness
 
 `sudo dnf install light`
 
@@ -86,14 +87,14 @@ Added the following to the top of my rc.lua:
 - mod4 ;         ---> brighter
 - mod4 <shift>-; ---> darker
 
-8. locking screen
+## locking screen
 
 ```
 sudo dnf install xlockmore
 xlock
 ```
 
-9. How do I get it to run the following on start up?
+## How do I get it to run the following on start up?
 
 ```
 xrdb -merge /home/fultonj/.xinitrc
@@ -116,7 +117,7 @@ do
 end
 ```
 
-10. Multi monitor
+## Multi monitor
 
 Added what's described here:
 
@@ -131,7 +132,7 @@ station and just run [3-mon-at-home](3-mon-at-home) after I dock. To
 undock and go back to the laptop screen I select the first option from
 `mod4+shift+x` before undocking.
 
-11. tags and multimonitor
+## tags and multimonitor
 
 multi-monitor works but I have 9 tags per screen. Often I want my tags
 to unify across screens (unless I set a window to sticky). I now have
@@ -144,7 +145,7 @@ The above is based on what I found at https://superuser.com/questions/605740/sim
 If I want a window to be on all screens I simply pin it 
 and tend to pin all the windows on my third monitor.
 
-12. Emacs keybindings in firefox
+## Emacs keybindings in firefox
 
 Though I'm not using Gnome, Firefox is compiled against GTK.
 The following worked for me with firefox-65.0-4.fc29.x86_64
