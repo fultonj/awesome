@@ -25,8 +25,8 @@ sudo nmtui
 - mod4 ("super" aka "windows key")
 - mod4 [1-9] "go to workspace/tag #"
 - mod4-r type of name of program to run, e.g. "mod4 firefox"
-- mod4 <enter> starts xterm
-- mod4 <space> cycles through tile options relative to open windows 
+- mod4 |enter| starts xterm
+- mod4 |space| cycles through tile options relative to open windows 
 
 ## terminal colors
 
