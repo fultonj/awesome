@@ -256,13 +256,24 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
+-- <start fultonj>
+-- Prevent the mouse scroll wheel from changing tags
+
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
+root.buttons(awful.util.table.join(
+    awful.button({ }, 3, function () mymainmenu:toggle() end)))
 -- }}}
+
+-- {{{ Mouse bindings
+-- root.buttons(gears.table.join(
+--     awful.button({ }, 3, function () mymainmenu:toggle() end),
+--     awful.button({ }, 4, awful.tag.viewnext),
+--     awful.button({ }, 5, awful.tag.viewprev)
+-- ))
+-- }}}
+-- <end fultonj>
+
+
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(

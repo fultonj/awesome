@@ -1,4 +1,4 @@
-# How I run AwesomeWM on Fedora 29
+# How I run AwesomeWM on Fedora 30
 
 How I configure [awesome window manager](https://awesomewm.org).
 This is really for my own notes and backup. 
@@ -48,6 +48,17 @@ emacs ~/.config/awesome/rc.lua &
 Decided on:
 ```
  beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
+```
+
+## Prevent the mouse scroll wheel from changing tags
+
+Added the following to the top of my rc.lua:
+
+```
+-- {{{ Mouse bindings
+root.buttons(awful.util.table.join(
+    awful.button({ }, 3, function () mymainmenu:toggle() end)))
+-- }}}
 ```
 
 ## Battery Widget
