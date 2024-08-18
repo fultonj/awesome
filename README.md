@@ -165,3 +165,24 @@ The following worked for me with firefox-65.0-4.fc29.x86_64
 echo "gtk-key-theme-name = Emacs" >> /home/fultonj/.config/gtk-3.0/settings.ini
 echo "gtk-key-theme-name = Emacs" >> /home/fultonj/.config/gtk-4.0/settings.ini
 ```
+
+## Maximized Browser on restart
+
+When awesomewm restarts I find my browsesr is over the wibox.
+
+"In Awesome Window Manager, the bar along the top that contains the
+menu, tags, task list, system tray, and other widgets is called the
+'wibox' (short for 'widget box')."
+
+alt-f is not what's happening to my browser since I still see a sliver
+of empty space under it.
+
+My workaround is to make the awful.titlebar.widget.maximizedbutton
+maxmized (square with four triangles around it).
+
+- https://awesomewm.org/apidoc/documentation/03-declarative-layout.md.html
+- [screencap of what this looks like](screenshots/browser_not_being_awesome.png)
+
+With my browser window maximized this way, it does not move when awesome restarts.
+
+
