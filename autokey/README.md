@@ -38,6 +38,7 @@ ctrl+e   end
 alt+f    ctrl-right
 alt+b    ctrl-left
 ctrl+k   select-all in front of cursor and cut
+ctrl+u   select-all and delete
 ```
 The key bindings on the left are from GNU and I have them in my muscle
 memory. The keybindings on the right are the GNU equivalent in CUA.
@@ -118,3 +119,20 @@ keyboard.send_keys("<shift>+<end>")
 keyboard.send_keys("<ctrl>+c")   # copy into clipboard
 keyboard.send_keys("<delete>")
 ```
+
+### ctrl+u
+
+- Name: `chrome_ctrl_u_clear`
+- Hotkey: `<ctrl>+u`
+- WindowFilter: `google-chrome-beta.Google-chrome-beta`
+- Body:
+```python
+import time
+keyboard.send_keys("<ctrl>+a")
+time.sleep(0.02)
+keyboard.send_keys("<delete>")
+```
+
+Note that I use google-chrome-beta so that's what the
+WindowFilter's "Detect Window Properties" button returned
+for me. YMMV.
