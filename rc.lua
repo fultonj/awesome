@@ -679,3 +679,5 @@ do
   end
 end
 
+-- start autokey-gtk
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
