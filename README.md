@@ -1,7 +1,8 @@
-# How I run AwesomeWM on Fedora 30
+# How I run AwesomeWM on Fedora 41
 
 How I configure [awesome window manager](https://awesomewm.org).
 This is really for my own notes and backup. 
+I have been using this since Fedora 30.
 
 ## installation
 
@@ -185,4 +186,6 @@ maxmized (square with four triangles around it).
 
 With my browser window maximized this way, it does not move when awesome restarts.
 
+## Emacs keybindings in chrome
 
+See [autokey/README.md](autokey/README.md)
