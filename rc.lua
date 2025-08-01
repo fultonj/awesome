@@ -439,7 +439,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
-
+-- the paren above closes the keybindings around line 315
 
 
 clientkeys = gears.table.join(
