@@ -536,6 +536,25 @@ for i = 1, 9 do
     )
 end
 
+-- Add Alt+1..9 as additional shortcuts to view tags 1..9
+for i = 1, 9 do
+    globalkeys = gears.table.join(globalkeys,
+        -- Alt + number via keycode form (layout-agnostic)
+        awful.key({ "Mod1" }, "#" .. i + 9, function ()
+            local s = awful.screen.focused()
+            local t = s.tags[i]
+            if t then t:view_only() end
+        end, {description = "view tag #"..i.." (Alt, keycode)", group = "tag"}),
+
+        -- Alt + number via keysym fallback ("1".."9") in case keycodes differ
+        awful.key({ "Mod1" }, tostring(i), function ()
+            local s = awful.screen.focused()
+            local t = s.tags[i]
+            if t then t:view_only() end
+        end, {description = "view tag #"..i.." (Alt, keysym)", group = "tag"})
+    )
+end
+
 clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
